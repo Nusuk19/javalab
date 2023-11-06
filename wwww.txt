@@ -1,0 +1,1 @@
+InsuranceObligations{policyNumber='345', policyType='АР', value=456.0, LevelRisk=2.0}

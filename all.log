@@ -1,1 +1,10 @@
-2023-11-06 17:32:24.586 [main] ERROR org.example.Main - Критична помилка: 
+2023-11-06 18:04:48.642 [main] ERROR File.LoadFromFile - Помилка:
+java.io.FileNotFoundException: ww.txt (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
+	at java.base/java.io.FileReader.<init>(FileReader.java:60) ~[?:?]
+	at File.LoadFromFile.loadFromFile(LoadFromFile.java:19) [classes/:?]
+	at PatternCommand.LoadDataCommand.execute(LoadDataCommand.java:24) [classes/:?]
+	at org.example.Main.main(Main.java:39) [classes/:?]
