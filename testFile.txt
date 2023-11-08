@@ -1,0 +1,1 @@
+InsuranceObligations{policyNumber='1', policyType='Type1', value=100.0, LevelRisk=0.2}

@@ -2,7 +2,7 @@ package org.example;
 
 
 import Derivative.Derivative;
-import PatternComand.Developer.Developer;
+import Developer.Developer;
 import File.LoadFromFile;
 import File.SaveInFile;
 import PatternCommand.*;

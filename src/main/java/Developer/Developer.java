@@ -1,4 +1,4 @@
-package PatternComand.Developer;
+package Developer;
 
 import PatternCommand.Command;
 

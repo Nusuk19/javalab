@@ -16,7 +16,7 @@ public class InsuranceObligations {
         this.policyNumber = policyNumber;
         this.policyType = policyType;
         this.value = value;
-        LevelRisk = levelRisk;
+        this.LevelRisk = levelRisk;
     }
 
     public String getPolicyNumber() {

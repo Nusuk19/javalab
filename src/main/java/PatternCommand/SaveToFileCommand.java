@@ -11,11 +11,11 @@ import java.util.Scanner;
 
 public class SaveToFileCommand implements Command {
     private Derivative derivative;
-    private SaveInFile SaveInFile;
+    private SaveInFile saveInFile;
 
-    public SaveToFileCommand(Derivative derivative, File.SaveInFile saveInFile) {
+    public SaveToFileCommand(Derivative derivative, SaveInFile saveInFile) {
         this.derivative = derivative;
-        SaveInFile = saveInFile;
+        this.saveInFile = saveInFile;
     }
 
     @Override
@@ -25,8 +25,11 @@ public class SaveToFileCommand implements Command {
         String filename = scanner.nextLine();
         try {
             List<InsuranceObligations> saveContracts = derivative.getContracts();
-            SaveInFile.saveToFile(filename, saveContracts);
-            System.out.println("Страхові зобов'язання збережено в файлі.");
+            if (saveContracts.isEmpty()) {
+                throw new RuntimeException("No insurance obligations to save.");
+            }
+            saveInFile.saveToFile(filename, saveContracts);
+            System.out.println("Insurance obligations saved to the file.");;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
