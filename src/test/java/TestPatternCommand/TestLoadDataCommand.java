@@ -1,6 +1,6 @@
 package TestPatternCommand;
 
-import File.LoadFromFile;
+import File.LoadFromDatabase;
 import Insurance.InsuranceObligations;
 import PatternCommand.LoadDataCommand;
 import Derivative.Derivative;
@@ -19,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestLoadDataCommand {
     private LoadDataCommand loadDataCommand;
     private Derivative derivative;
-    private LoadFromFile loadFromFile;
+    private LoadFromDatabase loadFromDatabase;
 
     @BeforeEach
     public void setUp() {
         derivative = new Derivative();
-        loadFromFile = Mockito.mock(LoadFromFile.class);
-        loadDataCommand = new LoadDataCommand(derivative, loadFromFile);
+        loadFromDatabase = Mockito.mock(LoadFromDatabase.class);
+        loadDataCommand = new LoadDataCommand(derivative, loadFromDatabase);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TestLoadDataCommand {
         List<InsuranceObligations> loadedContracts = new ArrayList<>();
         loadedContracts.add(new InsuranceObligations("1", "Type1", 100.0, 0.2));
 
-        Mockito.when(loadFromFile.loadFromFile("testfile.txt")).thenReturn(loadedContracts);
+        Mockito.when(loadFromDatabase.loadFromFile("testfile.txt")).thenReturn(loadedContracts);
 
         loadDataCommand.execute();
 
@@ -51,7 +51,7 @@ public class TestLoadDataCommand {
         InputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(inputStream);
 
-        Mockito.when(loadFromFile.loadFromFile("nonexistentfile.txt")).thenReturn(null);
+        Mockito.when(loadFromDatabase.loadFromFile("nonexistentfile.txt")).thenReturn(null);
 
         loadDataCommand.execute();
 

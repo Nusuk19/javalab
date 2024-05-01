@@ -2,7 +2,7 @@ package TestFile;
 
 import static org.junit.Assert.*;
 
-import File.LoadFromFile;
+import File.LoadFromDatabase;
 
 import Insurance.InsuranceObligations;
 import org.junit.Test;
@@ -17,9 +17,9 @@ public class TestLoadFromFile {
     public void testLoadFromFileValidFile() {
         try {
             File tempFile = createTempDataFile();
-            LoadFromFile loadFromFile = new LoadFromFile();
+            LoadFromDatabase loadFromDatabase = new LoadFromDatabase();
 
-            List<InsuranceObligations> contracts = loadFromFile.loadFromFile(tempFile.getAbsolutePath());
+            List<InsuranceObligations> contracts = loadFromDatabase.loadFromFile(tempFile.getAbsolutePath());
             assertNotNull(contracts);
             assertEquals(2, contracts.size());
             tempFile.delete();
@@ -30,8 +30,8 @@ public class TestLoadFromFile {
 
     @Test
     public void testLoadFromFileInvalidFile() {
-        LoadFromFile loadFromFile = new LoadFromFile();
-        List<InsuranceObligations> contracts = loadFromFile.loadFromFile("nonexistentfile.txt");
+        LoadFromDatabase loadFromDatabase = new LoadFromDatabase();
+        List<InsuranceObligations> contracts = loadFromDatabase.loadFromFile("nonexistentfile.txt");
         assertNotNull(contracts);
         assertEquals(0, contracts.size());
     }

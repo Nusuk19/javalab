@@ -6,36 +6,36 @@ import java.util.Scanner;
 
 public class Developer {
     private Command addContractCommand;
-    private Command DeleteContractCommand;
+    private Command deleteContractCommand;
     private Command loadDataCommand;
     private Command searchByRiskCommand;
     private Command sortByRiskCommand;
     private Command calculateTotalCostContactsCommand;
-    private Command DisplayCommand;
-    private Command SaveToFileCommand;
+    private Command displayCommand;
+    private Command saveToFileCommand;
     private Command helpCommand;
     private Command exitCommand;
 
     public Developer(
             Command addContractCommand,
-            Command DeleteContractCommand,
+            Command deleteContractCommand,
             Command loadDataCommand,
             Command searchByRiskCommand,
             Command sortByRiskCommand,
             Command calculateTotalCostContactsCommand,
-            Command DisplayCommand,
-            Command SaveToFile,
+            Command displayCommand,
+            Command saveToFileCommand,
             Command helpCommand,
             Command exitCommand
     ) {
         this.addContractCommand = addContractCommand;
-        this.DeleteContractCommand = DeleteContractCommand;
+        this.deleteContractCommand = deleteContractCommand;
         this.loadDataCommand = loadDataCommand;
         this.searchByRiskCommand = searchByRiskCommand;
         this.sortByRiskCommand = sortByRiskCommand;
         this.calculateTotalCostContactsCommand = calculateTotalCostContactsCommand;
-        this.DisplayCommand = DisplayCommand;
-        this.SaveToFileCommand = SaveToFile;
+        this.displayCommand = displayCommand;
+        this.saveToFileCommand = saveToFileCommand;
         this.helpCommand = helpCommand;
         this.exitCommand = exitCommand;
     }
@@ -44,14 +44,13 @@ public class Developer {
         System.out.println("Меню:");
         System.out.println("0. Добавити страхівку");
         System.out.println("1. Видалити страхівку");
-        System.out.println("2. Завантажити дані з файлу");
-        System.out.println("3. Пошук за ризиком");
-        System.out.println("4. Сортування за ризиком");
-        System.out.println("5. Обчислення загальної ціни");
-        System.out.println("6. Показати усі страхівки");
-        System.out.println("7. Зберегти дані у файл");
-        System.out.println("8. Довідка");
-        System.out.println("9. Вихід");
+        System.out.println("2. Пошук за ризиком");
+        System.out.println("3. Сортування за ризиком");
+        System.out.println("4. Обчислення загальної ціни");
+        System.out.println("5. Показати усі страхівки");
+        System.out.println("6. Зберегти дані у файл");
+        System.out.println("7. Довідка");
+        System.out.println("8. Вихід");
     }
 
     public Command handleUserInput() {
@@ -61,22 +60,20 @@ public class Developer {
             case 0:
                 return addContractCommand;
             case 1:
-                return DeleteContractCommand;
+                return deleteContractCommand;
             case 2:
-                return loadDataCommand;
-            case 3:
                 return searchByRiskCommand;
-            case 4:
+            case 3:
                 return sortByRiskCommand;
-            case 5:
+            case 4:
                 return calculateTotalCostContactsCommand;
+            case 5:
+                return displayCommand;
             case 6:
-                return DisplayCommand;
+                return saveToFileCommand;
             case 7:
-                return SaveToFileCommand;
-            case 8:
                 return helpCommand;
-            case 9:
+            case 8:
                 return exitCommand;
             default:
                 System.out.println("Невірний вибір. Спробуйте ще раз.");
@@ -84,4 +81,3 @@ public class Developer {
         }
     }
 }
-
