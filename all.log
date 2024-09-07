@@ -1,2 +1,0 @@
-2024-05-01 13:28:59.865 [main] INFO  File.LoadFromDatabase - Успішне завантаження даних з бази даних
-2024-05-01 13:29:18.340 [main] INFO  PatternCommand.DeleteContractCommand - Страхове зобов'язання видалене з бази даних.
